@@ -1,10 +1,11 @@
 import React from 'react'
 import propTypes from 'prop-types'
+import Styled from './styled'
 
 const Layout = ({ children }) => (
-  <div>
+  <Styled.Container>
     {children}
-  </div>
+  </Styled.Container>
 )
 
 Layout.propTypes = {
