@@ -5,7 +5,7 @@ import SEO from '@/components/SEO'
 import GlobalStyle from '@/components/GlobalStyle'
 
 const Home = () => (
-  <Layout>
+  <Layout isDark>
     <GlobalStyle />
     <SEO title='BlumenauJS' />
     Content
