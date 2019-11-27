@@ -19,6 +19,13 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "eslint": "^6.7.1",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-standard": "^4.0.1",
     "prettier": "^1.19.1"
   },
   "keywords": [
@@ -32,6 +39,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "linter": "eslint --fix src/",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
