@@ -8,7 +8,6 @@ const Home = () => (
   <Layout isDark>
     <GlobalStyle />
     <SEO title='BlumenauJS' />
-    Content
   </Layout>
 )
 
