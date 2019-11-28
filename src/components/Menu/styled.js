@@ -1,4 +1,25 @@
 import styled from '@emotion/styled'
+import { keyframes, css } from '@emotion/core'
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`
+
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+`
 
 const Menu = styled.ul`
   background: #fafafa;
@@ -13,7 +34,16 @@ const Menu = styled.ul`
   justify-content: center;
   margin: 0;
   padding: 0;
-  display: ${({ isOpen }) => isOpen ? 'flex' : 'none'};
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 200ms, opacity 200ms linear;
+
+  ${({ isOpen }) => isOpen && css`
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 200ms linear;
+  `}
 `
 
 const Link = styled.li`
