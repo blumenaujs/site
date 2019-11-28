@@ -14,7 +14,6 @@ const Menu = styled.ul`
   margin: 0;
   padding: 0;
   display: ${({ isOpen }) => isOpen ? 'flex' : 'none'};
-  
 `
 
 const Link = styled.li`
