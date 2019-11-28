@@ -6,7 +6,9 @@ const Menu = styled.div`
   background: #fafafa;
   position: fixed;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: -webkit-fill-avaliable;
+  overflow: hidden;
   top: 0;
   left: 0;
   flex-flow: column wrap;
@@ -43,6 +45,7 @@ const IconsContainer = styled.div`
   display: flex;
   align-items: center;
   flex-grow: 1;
+  box-sizing: border-box;
 `
 
 const ItemsContainer = styled.div`
@@ -51,9 +54,11 @@ const ItemsContainer = styled.div`
   flex-flow: column wrap;
   align-items: center;
   flex-grow: 2;
+  box-sizing: border-box;
+
 `
 
-const Icon = styled.div`
+const Icon = styled.a`
   margin: 0 16px;
   width: 32px;
   transform: scale(0);

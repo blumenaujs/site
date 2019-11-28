@@ -35,15 +35,15 @@ const Menu = () => {
         </Styled.ItemsContainer>
 
         <Styled.IconsContainer>
-          <Styled.Icon index={1} isOpen={isOpen}>
+          <Styled.Icon target='_blank' href='' index={1} isOpen={isOpen}>
             <FacebookIcon />
           </Styled.Icon>
 
-          <Styled.Icon index={2} isOpen={isOpen}>
+          <Styled.Icon target='_blank' href='https://www.instagram.com/blumenaujs/' index={2} isOpen={isOpen}>
             <InstagramIcon />
           </Styled.Icon>
 
-          <Styled.Icon index={3} isOpen={isOpen}>
+          <Styled.Icon target='_blank' href='https://www.linkedin.com/company/blumenaujs/?viewAsMember=false' index={3} isOpen={isOpen}>
             <LinkedinIcon />
           </Styled.Icon>
 
