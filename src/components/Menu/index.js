@@ -1,6 +1,17 @@
 import React from 'react'
 import BurgerButton from '../BurgerButton'
 import Styled from './styled'
+import InstagramIcon from './InstagramIcon'
+import LinkedinIcon from './LinkedinIcon'
+import FacebookIcon from './FacebookIcon'
+
+const links = [
+  'Sobre nós',
+  'Comunidade',
+  'Meetup',
+  'Blog',
+  'Ajude'
+]
 
 const Menu = () => {
   const [isOpen, toggleMenu] = React.useState(false)
@@ -9,11 +20,35 @@ const Menu = () => {
     <div>
       <BurgerButton onClick={() => toggleMenu(!isOpen)} isOpen={isOpen} />
       <Styled.Menu isOpen={isOpen}>
-        <Styled.Link>Sobre nós</Styled.Link>
-        <Styled.Link>Comunidade</Styled.Link>
-        <Styled.Link>Meetup</Styled.Link>
-        <Styled.Link>Blog</Styled.Link>
-        <Styled.Link>Ajude</Styled.Link>
+
+        <Styled.ItemsContainer>
+          {links.map(
+            (link, index) => (
+              <Styled.Link
+                isOpen={isOpen}
+                key={index}
+                index={index}
+              >
+                {link}
+              </Styled.Link>
+            ))}
+        </Styled.ItemsContainer>
+
+        <Styled.IconsContainer>
+          <Styled.Icon index={1} isOpen={isOpen}>
+            <FacebookIcon />
+          </Styled.Icon>
+
+          <Styled.Icon index={2} isOpen={isOpen}>
+            <InstagramIcon />
+          </Styled.Icon>
+
+          <Styled.Icon index={3} isOpen={isOpen}>
+            <LinkedinIcon />
+          </Styled.Icon>
+
+        </Styled.IconsContainer>
+
       </Styled.Menu>
     </div>
   )

@@ -1,39 +1,18 @@
 import styled from '@emotion/styled'
-import { keyframes, css } from '@emotion/core'
+import { css } from '@emotion/core'
+import { fromBottom, scaleUp } from '@/css/animations'
 
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-`
-
-const fadeOut = keyframes`
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-`
-
-const Menu = styled.ul`
+const Menu = styled.div`
   background: #fafafa;
   position: fixed;
   width: 100vw;
   height: 100vh;
   top: 0;
   left: 0;
-  list-style: none;
   flex-flow: column wrap;
   align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
+  padding: 48px;
+  box-sizing: border-box;
   display: flex;
   visibility: hidden;
   opacity: 0;
@@ -43,14 +22,46 @@ const Menu = styled.ul`
     visibility: visible;
     opacity: 1;
     transition: opacity 200ms linear;
-  `}
+  `}  
 `
 
-const Link = styled.li`
+const Link = styled.div`
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
   font-size: 28px;
   margin: 24px 0;
+  transform: translateY(0px);
+  opacity: 0;
+
+  ${({ isOpen, index }) => isOpen && css`
+    animation: ${fromBottom} 200ms ease-in-out forwards;
+    animation-delay: ${50 * index}ms;
+  `}
 `
 
-export default { Menu, Link }
+const IconsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+`
+
+const ItemsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  align-items: center;
+  flex-grow: 2;
+`
+
+const Icon = styled.div`
+  margin: 0 16px;
+  width: 32px;
+  transform: scale(0);
+
+  ${({ isOpen, index }) => isOpen && css`
+    animation: ${scaleUp} 100ms ease-in-out forwards;
+    animation-delay: ${100 * index}ms;
+  `}
+`
+
+export default { Menu, Link, IconsContainer, Icon, ItemsContainer }
