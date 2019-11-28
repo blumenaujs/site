@@ -1,8 +1,9 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { xs } from '@/css/media-query'
+import { black } from '@/css/colors'
 
-const getBackground = ({ isDark }) => isDark ? '#312D2E' : '#FAFAFA'
+const getBackground = ({ isDark }) => isDark ? black : '#FAFAFA'
 
 const Container = styled.div`
   width: 100vw;  

@@ -1,47 +1,27 @@
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
-import { sm } from '@/css/media-query'
 
-const BurgerButton = styled.button`
+const Menu = styled.ul`
+  background: #fafafa;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  list-style: none;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
-  display: block;
-  background: 0;
-  border: 0;
-  outline: 0;
-  position: fixed;
-  top: 32px;
-  right: 24px;
-
-  &::after, 
-  &::before, 
-  div {
-    background-color: #fff;
-    content: ' ';
-    display: block;
-    height: 2px;
-    width: 26px;
-    margin: 6px 0;
-    transition: all .2s ease-in-out;
-  }
-
-  &.-open {
-    &::before {
-      transform: translateY(8px) rotate(135deg);
-    }
-
-    &::after {
-      transform: translateY(-8px) rotate(-135deg);
-    }
-
-    > div {
-      transform: scale(0);
-    }
-  }
-
-  ${sm(css`
-    display: none;
-  `)}
+  display: ${({ isOpen }) => isOpen ? 'flex' : 'none'};
+  
 `
 
-export default { BurgerButton }
+const Link = styled.li`
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  margin: 24px 0;
+`
+
+export default { Menu, Link }
