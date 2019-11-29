@@ -1,17 +1,17 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import { sm } from '@/css/media-query'
+import { lg } from '@/css/media-query'
 
 const MobileContainer = styled.div`
   display: block;
-  ${sm(css`
+  ${lg(css`
     display: none;
   `)}
 `
 
 const DesktopContainer = styled.div`
   display: none;
-  ${sm(css`
+  ${lg(css`
     display: block;
   `)}
 `

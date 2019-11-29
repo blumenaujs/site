@@ -1,12 +1,13 @@
 import React from 'react'
 import Logo from '../Logo'
 import Menu from '../Menu'
+import Styled from './styled'
 
 const Header = () => (
-  <header>
+  <Styled.Header>
     <Logo />
     <Menu />
-  </header>
+  </Styled.Header>
 )
 
 export default Header
