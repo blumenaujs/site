@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import { lg } from '@/css/media-query'
+import { md } from '@/css/media-query'
 import { black } from '@/css/colors'
 
 const BurgerButton = styled.button`
@@ -47,7 +47,7 @@ const BurgerButton = styled.button`
     }
   `}
 
-  ${lg(css`
+  ${md(css`
     display: none;
   `)}
 `

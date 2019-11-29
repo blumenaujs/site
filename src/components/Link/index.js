@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { fromBottom } from '@/css/animations'
-import { lg } from '@/css/media-query'
+import { md, sm } from '@/css/media-query'
 
 const Link = styled.a`
   font-family: 'Raleway', sans-serif;
@@ -16,7 +16,11 @@ const Link = styled.a`
     animation-delay: ${50 * index}ms;
   `}
 
-  ${lg(css`
+  ${sm(css`
+    font-size: 2.5rem;
+  `)}
+
+  ${md(css`
     cursor: pointer;
     opacity: 1;
     color: white;

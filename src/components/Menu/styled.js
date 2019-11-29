@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { scaleUp } from '@/css/animations'
-import { lg } from '@/css/media-query'
+import { md } from '@/css/media-query'
 
 const Menu = styled.div`
   background: #fafafa;
@@ -28,7 +28,7 @@ const Menu = styled.div`
     transition: opacity 200ms linear;
   `}
 
-  ${lg(css`
+  ${md(css`
     position: relative;
     padding: 0;
     width: auto;
@@ -57,7 +57,7 @@ const ItemsContainer = styled.div`
   flex-grow: 2;
   box-sizing: border-box;
 
-  ${lg(css`  
+  ${md(css`  
     background: transparent;
     display: flex;
     justify-content: flex-end;
