@@ -8,10 +8,6 @@ import { useThemeContext } from '../../contexts/ThemeContext'
 
 const Layout = ({ children }) => {
   const { isDark, toggleDarkMode } = useThemeContext()
-
-  window.addEventListener('scroll', () => {
-    console.log('teste')
-  })
   return (
     <Styled.Container>
       <Header />
