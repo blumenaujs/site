@@ -3,15 +3,15 @@ import propTypes from 'prop-types'
 import Header from '@/components/Header'
 
 import Styled from './styled'
-import { useThemeContext } from '@/contexts/ThemeContext'
+import { useThemeContext } from '../../contexts/ThemeContext'
 
 const Layout = ({ children }) => {
-  const { isDark } = useThemeContext()
-
+  const { isDark, toggleDarkMode } = useThemeContext()
   return (
-    <Styled.Container isDark={isDark}>
+    <Styled.Container>
       <Header />
       {children}
+      <button onClick={() => toggleDarkMode(!isDark)}>change</button>
     </Styled.Container>
   )
 }

@@ -42,6 +42,7 @@ const Menu = styled.div`
 `
 
 const ItemsContainer = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;

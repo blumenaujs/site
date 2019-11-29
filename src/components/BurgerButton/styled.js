@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { md } from '@/css/media-query'
 import { black } from '@/css/colors'
+import { getPrimaryColor } from '@/contexts/ThemeContext'
 
 const BurgerButton = styled.button`
   margin: 0;
@@ -18,7 +19,7 @@ const BurgerButton = styled.button`
   &::after, 
   &::before, 
   div {
-    background-color: #fff;
+    background-color: ${getPrimaryColor};
     content: ' ';
     display: block;
     height: 2px;
