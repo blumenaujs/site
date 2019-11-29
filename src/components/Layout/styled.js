@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import { md } from '@/css/media-query'
+import { md, lg, xl } from '@/css/media-query'
 import { black } from '@/css/colors'
 
 const getBackground = ({ isDark }) => isDark ? black : '#FAFAFA'
@@ -14,6 +14,14 @@ const Container = styled.div`
   
   ${md(css`
     padding: 2rem;
+  `)}
+
+  ${lg(css`
+    padding: 4.5rem 6rem;
+  `)}
+
+  ${xl(css`
+    padding: 4.5rem 10rem;
   `)}
 `
 

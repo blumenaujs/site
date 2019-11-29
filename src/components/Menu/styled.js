@@ -1,6 +1,5 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import { scaleUp } from '@/css/animations'
 import { md } from '@/css/media-query'
 
 const Menu = styled.div`
@@ -13,7 +12,7 @@ const Menu = styled.div`
   top: 0;
   bottom: 0;
   left: 0;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: center;
   padding: 3rem;
   box-sizing: border-box;
@@ -42,13 +41,6 @@ const Menu = styled.div`
   `)}
 `
 
-const IconsContainer = styled.div`
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
-  box-sizing: border-box;
-`
-
 const ItemsContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -65,15 +57,4 @@ const ItemsContainer = styled.div`
   `)}
 `
 
-const SocialLink = styled.a`  
-  margin: 0 1rem;
-  width: 2rem;
-  transform: scale(0);
-
-  ${({ isOpen, index }) => isOpen && css`
-    animation: ${scaleUp} 100ms ease-in-out forwards;
-    animation-delay: ${100 * index}ms;
-  `}
-`
-
-export default { Menu, IconsContainer, SocialLink, ItemsContainer }
+export default { Menu, ItemsContainer }
