@@ -10,7 +10,9 @@ const Container = styled.div`
   background: ${getSecondaryColor};
   padding: 1.5rem;
   transition: 200ms;
-  
+  display: flex; 
+  flex-direction: column;
+
   ${md(css`
     padding: 2rem;
   `)}
@@ -24,4 +26,8 @@ const Container = styled.div`
   `)}
 `
 
-export default { Container }
+const Content = styled.div`
+  flex-grow: 2;
+`
+
+export default { Container, Content }

@@ -20,6 +20,7 @@ const Menu = styled.div`
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s 200ms, opacity 200ms linear;
+  z-index:888;
 
   ${({ isOpen }) => isOpen && css`
     visibility: visible;

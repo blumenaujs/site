@@ -3,15 +3,22 @@ import propTypes from 'prop-types'
 import Header from '@/components/Header'
 
 import Styled from './styled'
+import Footer from '../Footer'
 import { useThemeContext } from '../../contexts/ThemeContext'
 
 const Layout = ({ children }) => {
   const { isDark, toggleDarkMode } = useThemeContext()
+
+  window.addEventListener('scroll', () => {
+    console.log('teste')
+  })
   return (
     <Styled.Container>
       <Header />
-      {children}
-      <button onClick={() => toggleDarkMode(!isDark)}>change</button>
+      <Styled.Content>
+        {children}
+      </Styled.Content>
+      <Footer />
     </Styled.Container>
   )
 }

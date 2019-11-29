@@ -2,10 +2,10 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { fromBottom } from '@/css/animations'
 import { md, sm } from '@/css/media-query'
-import { getPrimaryColor, getSecondaryColor } from '@/contexts/ThemeContext'
+import { getPrimaryColor, getSecondaryColor, getFontFamily } from '@/contexts/ThemeContext'
 
 const Link = styled.a`
-  font-family: 'Raleway', sans-serif;
+  font-family: ${getFontFamily};
   font-weight: 600;
   font-size: 1.75rem;
   margin: 1.5rem 0;

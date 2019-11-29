@@ -1,12 +1,10 @@
 import React from 'react'
-import { useThemeContext } from '@/contexts/ThemeContext'
+import { getPrimaryColor } from '@/contexts/ThemeContext'
 import { useTheme } from 'emotion-theming'
 
 const MobileLogo = () => {
-  const { isDark } = useThemeContext()
   const theme = useTheme()
-
-  const color = isDark ? theme.colors.white : theme.colors.black
+  const color = React.useMemo(() => getPrimaryColor({ theme }), [theme])
 
   return (
     <svg width='120' height='38' viewBox='0 0 120 38' fill='none' xmlns='http://www.w3.org/2000/svg'>
