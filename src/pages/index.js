@@ -7,9 +7,16 @@ import { ThemeProvider } from '../contexts/ThemeContext'
 
 const Home = () => (
   <ThemeProvider>
+    <GlobalStyle />
+    <SEO title='BlumenauJS' />
     <Layout>
-      <GlobalStyle />
-      <SEO title='BlumenauJS' />
+      <Layout.Content>Teste 1</Layout.Content>
+      <Layout.Content>Teste 2</Layout.Content>
+      <Layout.Content>Teste 3</Layout.Content>
+      <Layout.Content>Teste 4</Layout.Content>
+      <Layout.Content>Teste 5</Layout.Content>
+      <Layout.Content>Teste 6</Layout.Content>
+      <Layout.Content>Teste 7</Layout.Content>
     </Layout>
   </ThemeProvider>
 )

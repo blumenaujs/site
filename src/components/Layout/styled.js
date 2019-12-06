@@ -28,6 +28,7 @@ const Container = styled.div`
 
 const Content = styled.div`
   flex-grow: 2;
+  display: ${props => props.visible ? 'block' : 'none'};
 `
 
 export default { Container, Content }
