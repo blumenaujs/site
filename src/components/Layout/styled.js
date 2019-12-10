@@ -6,6 +6,8 @@ import { getSecondaryColor } from '@/contexts/ThemeContext'
 const Container = styled.div`
   width: 100vw;  
   height: 100vh;
+  max-height: 100vh;
+  max-height: -webkit-fill-avaliable;
   box-sizing: border-box;
   background: ${getSecondaryColor};
   padding: 1.5rem;

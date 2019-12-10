@@ -2,11 +2,10 @@ import React, { Children, useRef } from 'react'
 import propTypes from 'prop-types'
 import { useMount, useUnmount } from 'react-use'
 
-import Header from '@/components/Header'
+import { Header, Footer } from '@/components'
 import { useSection } from '@/contexts/SectionContext'
 
 import Styled from './styled'
-import Footer from '../Footer'
 
 const renderChild = current => (child, index) =>
   React.cloneElement(child, { visible: current === index })
@@ -39,4 +38,4 @@ Layout.propTypes = {
 
 Layout.Content = Styled.Content
 
-export default Layout
+export { Layout }

@@ -15,4 +15,4 @@ const GlobalStyle = () => (
   <Global styles={style} />
 )
 
-export default GlobalStyle
+export { GlobalStyle }

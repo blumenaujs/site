@@ -1,7 +1,9 @@
 import React from 'react'
-import ScrollButton from '../ScrollButton'
-import Styled from './styled'
+
+import { ScrollButton } from '@/components'
 import { useSectionsContext } from '@/contexts/SectionContext'
+
+import Styled from './styled'
 
 const isFirst = section => section === 0
 
@@ -19,4 +21,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export { Footer }

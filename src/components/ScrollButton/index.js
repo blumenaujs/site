@@ -18,4 +18,4 @@ ScrollButton.propTypes = {
   label: propTypes.string.isRequired
 }
 
-export default ScrollButton
+export { ScrollButton }

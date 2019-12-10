@@ -1,7 +1,11 @@
 import React from 'react'
-import BurgerButton from '../BurgerButton'
-import SocialLinks from '../SocialLinks'
-import Link from '../Link'
+
+import {
+  BurgerButton,
+  SocialLinks,
+  Link
+} from '@/components'
+
 import Styled from './styled'
 
 const links = [
@@ -54,4 +58,4 @@ const Menu = () => {
   )
 }
 
-export default Menu
+export { Menu }

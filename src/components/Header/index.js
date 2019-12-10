@@ -1,6 +1,7 @@
 import React from 'react'
-import Logo from '../Logo'
-import Menu from '../Menu'
+
+import { Logo, Menu } from '@/components'
+
 import Styled from './styled'
 
 const Header = () => (
@@ -10,4 +11,4 @@ const Header = () => (
   </Styled.Header>
 )
 
-export default Header
+export { Header }

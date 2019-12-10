@@ -26,4 +26,4 @@ SocialLinks.propTypes = {
   isOpen: propTypes.bool.isRequired
 }
 
-export default SocialLinks
+export { SocialLinks }

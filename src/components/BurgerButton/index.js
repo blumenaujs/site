@@ -13,4 +13,4 @@ BurgerButton.propTypes = {
   onClick: propTypes.func.isRequired
 }
 
-export default BurgerButton
+export { BurgerButton }
