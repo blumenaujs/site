@@ -9,7 +9,7 @@ const Container = styled.div`
   box-sizing: border-box;
   background: ${getSecondaryColor};
   padding: 1.5rem;
-  transition: 200ms;
+  transition: 300ms ease;
   display: flex; 
   flex-direction: column;
 

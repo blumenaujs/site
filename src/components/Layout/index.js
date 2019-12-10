@@ -1,18 +1,19 @@
 import React, { Children, useRef } from 'react'
 import propTypes from 'prop-types'
+import { useMount, useUnmount } from 'react-use'
+
 import Header from '@/components/Header'
+import { useSection } from '@/contexts/SectionContext'
 
 import Styled from './styled'
 import Footer from '../Footer'
-import useLayout from './useLayout'
-import { useMount, useUnmount } from 'react-use'
 
 const renderChild = current => (child, index) =>
   React.cloneElement(child, { visible: current === index })
 
 const Layout = ({ children }) => {
   const ref = useRef()
-  const [handleWheel, currentSection] = useLayout(children.length)
+  const [handleWheel, currentSection] = useSection(children.length)
 
   useMount(() => {
     ref.current.addEventListener('wheel', handleWheel)

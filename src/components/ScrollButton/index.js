@@ -1,15 +1,21 @@
 import React from 'react'
+import propTypes from 'prop-types'
+
 import Styled from './styled'
 import MouseIcon from './MouseIcon'
 
-const ScrollButton = () => (
+const ScrollButton = ({ label }) => (
   <Styled.Container>
     <Styled.IconContainer>
       <MouseIcon />
       <Styled.Scroll />
     </Styled.IconContainer>
-    <Styled.Label>role para saber mais</Styled.Label>
+    <Styled.Label>{label}</Styled.Label>
   </Styled.Container>
 )
+
+ScrollButton.propTypes = {
+  label: propTypes.string.isRequired
+}
 
 export default ScrollButton
