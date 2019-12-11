@@ -4,10 +4,20 @@ import { Global, css } from '@emotion/core'
 const style = css`
   @import url('https://fonts.googleapis.com/css?family=Raleway:400,600,700&display=swap');
   html, body {
-    height: 100vh;
     width: 100vw;
     margin: 0;
     padding: 0;
+  }
+
+  html {
+    height: 100vh;
+  }
+
+  body {
+    min-height: 100vh;
+    min-height: -webkit-fill-avaliable;
+    top: 0;
+    bottom: 0;
   }
 `
 
