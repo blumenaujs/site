@@ -6,9 +6,17 @@ import { Header, Footer } from '@/components'
 import { useSection } from '@/contexts/SectionContext'
 
 import Styled from './styled'
+import { Section } from './Section'
 
 const renderChild = current => (child, index) =>
   React.cloneElement(child, { visible: current === index })
+
+const linkFromChild = ({ props }, index) => ({
+  label: props.label,
+  section: index
+})
+
+const createLinks = children => Children.map(children, linkFromChild)
 
 const Layout = ({ children }) => {
   const ref = useRef()
@@ -24,7 +32,7 @@ const Layout = ({ children }) => {
 
   return (
     <Styled.Container ref={ref}>
-      <Header />
+      <Header links={createLinks(children)} />
       {Children.map(children, renderChild(currentSection))}
       <Footer />
     </Styled.Container>
@@ -36,6 +44,6 @@ Layout.propTypes = {
   isDark: propTypes.bool
 }
 
-Layout.Content = Styled.Content
+Layout.Section = Section
 
 export { Layout }

@@ -1,4 +1,5 @@
 import React from 'react'
+import propTypes from 'prop-types'
 
 import {
   BurgerButton,
@@ -7,43 +8,31 @@ import {
 } from '@/components'
 
 import Styled from './styled'
+import { useSectionsContext } from '@/contexts/SectionContext'
 
-const links = [
-  {
-    label: 'Sobre nós',
-    path: '/'
-  },
-  {
-    label: 'Comunidade',
-    path: '/'
-  },
-  {
-    label: 'Meetup',
-    path: '/'
-  },
-  {
-    label: 'Blog',
-    path: '/'
-  },
-  {
-    label: 'Ajude',
-    path: '/',
-    isButton: true
-  }
-]
-
-const Menu = () => {
+const Menu = ({ links }) => {
   const [isOpen, toggleMenu] = React.useState(false)
+
+  const { setSection } = useSectionsContext()
+
+  const handleLinkClick = section => {
+    toggleMenu(false)
+    setTimeout(() => setSection(section), 100)
+  }
 
   return (
     <div>
-      <BurgerButton onClick={() => toggleMenu(!isOpen)} isOpen={isOpen} />
+      <BurgerButton
+        isOpen={isOpen}
+        onClick={() => toggleMenu(!isOpen)}
+      />
+
       <Styled.Menu isOpen={isOpen}>
         <Styled.ItemsContainer>
           {links.map((link, index) => (
             <Link
+              onClick={() => handleLinkClick(link.section)}
               isOpen={isOpen}
-              isButton={link.isButton}
               key={index}
               index={index}
             >
@@ -56,6 +45,10 @@ const Menu = () => {
       </Styled.Menu>
     </div>
   )
+}
+
+Menu.propTypes = {
+  links: propTypes.array.isRequired
 }
 
 export { Menu }

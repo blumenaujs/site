@@ -4,7 +4,9 @@ import {
   Layout,
   SEO,
   GlobalStyle,
-  Banner
+  Banner,
+  About,
+  Join
 } from '@/components'
 
 import { SectionsProvider } from '@/contexts/SectionContext'
@@ -16,18 +18,25 @@ const Home = () => (
       <GlobalStyle />
       <SEO title='BlumenauJS' />
       <Layout>
-        <Layout.Content>
+        <Layout.Section isDark={true} label='Início'>
           <Banner />
-        </Layout.Content>
-        <Layout.Content>
-          Teste 2
-        </Layout.Content>
-        <Layout.Content>
-          Teste 3
-        </Layout.Content>
-        <Layout.Content>
-          Teste 5
-        </Layout.Content>
+        </Layout.Section>
+
+        <Layout.Section label='Sobre nós'>
+          <About />
+        </Layout.Section>
+
+        <Layout.Section isDark={true} label='Comunidade'>
+          <Join />
+        </Layout.Section>
+
+        <Layout.Section label='Meetup'>
+          Meetup
+        </Layout.Section>
+
+        <Layout.Section isLast={true} label='Ajude'>
+          Ajude
+        </Layout.Section>
       </Layout>
     </SectionsProvider>
   </ThemeProvider>

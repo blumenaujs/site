@@ -9,7 +9,6 @@ const isFirst = section => section === 0
 
 const Footer = () => {
   const { isLast, currentSection } = useSectionsContext()
-
   const label = isFirst(currentSection)
     ? 'deslize para saber mais'
     : 'continue deslizando'
