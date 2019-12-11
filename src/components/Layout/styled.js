@@ -6,8 +6,7 @@ import { getSecondaryColor } from '@/contexts/ThemeContext'
 const Container = styled.div`
   width: 100vw;  
   height: 100vh;
-  max-height: 100vh;
-  max-height: -webkit-fill-avaliable;
+  height: calc(var(--vh, 1vh) * 100);
   box-sizing: border-box;
   background: ${getSecondaryColor};
   padding: 1.5rem;
@@ -15,9 +14,6 @@ const Container = styled.div`
   display: flex; 
   flex-direction: column;
   overflow: hidden;
-  top: 0;
-  bottom: 0;
-  left: 0;
 
   ${md(css`
     padding: 2rem;
