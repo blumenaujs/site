@@ -5,6 +5,7 @@ const style = css`
   @import url("https://fonts.googleapis.com/css?family=Raleway:400,600,700&display=swap");
   html,
   body {
+    overscroll-behavior-y: contain;
     margin: 0;
     padding: 0;
   }

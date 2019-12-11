@@ -1,6 +1,7 @@
 import React, { Children, useRef } from 'react'
-import { useSwipeable } from 'react-swipeable'
 import propTypes from 'prop-types'
+import { useDebouncedCallback } from 'use-debounce'
+import { useSwipeable } from 'react-swipeable'
 import { useMount, useUnmount } from 'react-use'
 
 import { Header, Footer } from '@/components'
@@ -23,25 +24,29 @@ const Layout = ({ children }) => {
   const ref = useRef()
 
   const [previous, forward, currentSection] = useSection(children.length)
+
+  const [debouncedPrevious] = useDebouncedCallback(previous, 200)
+  const [debouncedForward] = useDebouncedCallback(forward, 200)
+
   const handlers = useSwipeable({
-    onSwipedLeft: previous,
-    onSwipedRight: forward
+    onSwipedDown: debouncedPrevious,
+    onSwipedUp: debouncedForward
   })
 
-  const handleWheel = event => {
+  const [handleWheel] = useDebouncedCallback(event => {
     if (event.deltaY > 0) {
       forward()
     } else {
       previous()
     }
-  }
+  }, 100)
 
   useMount(() => {
-    ref.current.addEventListener('wheel', handleWheel)
+    ref.current.addEventListener('mousewheel', handleWheel)
   })
 
   useUnmount(() => {
-    ref.current.removeEventListener('wheel', handleWheel)
+    ref.current.removeEventListener('mousewheel', handleWheel)
   })
 
   return (

@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import { useDebouncedCallback } from 'use-debounce'
 import propTypes from 'prop-types'
 import { useSetState } from 'react-use'
 
@@ -59,11 +58,5 @@ export const useSection = length => {
     setSection(previousSection)
   }
 
-  const [handleNextSection] = useDebouncedCallback(forwardToNextSection, 200)
-  const [handlePreviousSection] = useDebouncedCallback(
-    backToPreviousSection,
-    200
-  )
-
-  return [handlePreviousSection, handleNextSection, currentSection]
+  return [backToPreviousSection, forwardToNextSection, currentSection]
 }
