@@ -14,6 +14,10 @@ const Container = styled.div`
   transition: 300ms ease;
   display: flex; 
   flex-direction: column;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
 
   ${md(css`
     padding: 2rem;
