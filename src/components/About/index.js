@@ -7,7 +7,7 @@ const About = () => (
     <Text>
       Fundada em 2018 a BlumenauJS é a primeira comunidade JavaScript em Blumenau.
       <br />
-      Nosso objetivo é fomentar uma cultura de desenvolvimento de software, visando ajudar e os desenvolvedores da região.
+      Nosso objetivo é fomentar uma cultura de desenvolvimento de software, visando ajudar os desenvolvedores da região.
       <br />
       Juntos sabemos que podemos tornar Blumenau um polo de referência nacional em tecnologia.
     </Text>
