@@ -36,7 +36,7 @@ const Home = () => (
           <Meetup />
         </Layout.Section>
 
-        <Layout.Section isLast={true} label='Ajude'>
+        <Layout.Section isLast={true} isDark={true} label='Ajude'>
           <Help />
         </Layout.Section>
       </Layout>
