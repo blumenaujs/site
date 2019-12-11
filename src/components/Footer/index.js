@@ -1,4 +1,5 @@
 import React from 'react'
+import QueueAnim from 'rc-queue-anim'
 
 import { ScrollButton } from '@/components'
 import { useSectionsContext } from '@/contexts/SectionContext'
@@ -15,8 +16,11 @@ const Footer = () => {
 
   return (
     <Styled.Footer>
-      {!isLast && <ScrollButton label={label} />}
+      <QueueAnim duration={600} type='bottom' delay={1100}>
+        {!isLast && <ScrollButton label={label} key={1} />}
+      </QueueAnim>
     </Styled.Footer>
+
   )
 }
 

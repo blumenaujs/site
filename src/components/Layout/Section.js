@@ -16,7 +16,7 @@ const Section = ({ visible, isDark, isLast, children }) => {
     }
   }, [visible])
 
-  return <Styled.Content visible={visible}>{children}</Styled.Content>
+  return visible ? <Styled.Content>{children}</Styled.Content> : null
 }
 
 Section.propTypes = {

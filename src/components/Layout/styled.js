@@ -28,7 +28,8 @@ const Container = styled.div`
 
 const Content = styled.div`
   flex-grow: 2;
-  display: ${props => (props.visible ? 'flex' : 'none')};
+  display: flex;
+  /* display: ${props => (props.visible ? 'flex' : 'none')}; */
   align-items: center;
 `
 

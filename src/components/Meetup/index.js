@@ -1,13 +1,14 @@
 import React from 'react'
+import QueueAnim from 'rc-queue-anim'
 
 import { Text } from '@/components'
 
 import Styled from './styled'
 import meetupImage from './meetup.png'
 
-const Meetup = () => {
-  return (
-    <div>
+const Meetup = () => (
+  <QueueAnim duration={600} type='left' delay={600}>
+    <div key={1}>
       <Styled.Image src={meetupImage} alt='Foto meetup BlumenauJS' />
       <div>
         <Styled.Title>Meetup</Styled.Title>
@@ -16,7 +17,8 @@ const Meetup = () => {
         </Text>
       </div>
     </div>
-  )
-}
+  </QueueAnim>
+)
+
 
 export { Meetup }

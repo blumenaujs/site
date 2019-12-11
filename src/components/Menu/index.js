@@ -1,4 +1,5 @@
 import React from 'react'
+import QueueAnim from 'rc-queue-anim'
 import propTypes from 'prop-types'
 
 import {
@@ -26,23 +27,25 @@ const Menu = ({ links }) => {
         isOpen={isOpen}
         onClick={() => toggleMenu(!isOpen)}
       />
+      <QueueAnim duration={800} type={['right']} delay={600}>
 
-      <Styled.Menu isOpen={isOpen}>
-        <Styled.ItemsContainer>
-          {links.map((link, index) => (
-            <Link
-              onClick={() => handleLinkClick(link.section)}
-              isOpen={isOpen}
-              key={index}
-              index={index}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </Styled.ItemsContainer>
+        <Styled.Menu isOpen={isOpen} key={1}>
+          <Styled.ItemsContainer>
+            {links.map((link, index) => (
+              <Link
+                onClick={() => handleLinkClick(link.section)}
+                isOpen={isOpen}
+                key={index}
+                index={index}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </Styled.ItemsContainer>
 
-        <SocialLinks isOpen={isOpen} />
-      </Styled.Menu>
+          <SocialLinks isOpen={isOpen} />
+        </Styled.Menu>
+      </QueueAnim>
     </div>
   )
 }
