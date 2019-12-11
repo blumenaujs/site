@@ -15,7 +15,7 @@ const style = css`
 
   body {
     min-height: 100vh;
-    min-height: -webkit-fill-avaliable;
+    min-height: -webkit-fill-available;
     top: 0;
     bottom: 0;
   }

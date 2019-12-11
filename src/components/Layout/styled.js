@@ -6,7 +6,7 @@ import { getSecondaryColor } from '@/contexts/ThemeContext'
 const Container = styled.div`
   width: 100vw;
   min-height: 100vh;
-  min-height: -webkit-fill-avaliable;
+  min-height: -webkit-fill-available;
   overflow: hidden;
   top: 0;
   bottom: 0;
