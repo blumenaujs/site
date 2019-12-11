@@ -11,13 +11,6 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-emotion',
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: path.join(__dirname, 'src', 'images')
-      }
-    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
