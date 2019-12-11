@@ -42,7 +42,7 @@ export const useSectionsContext = () => useContext(SectionsContext)
 export const useSection = length => {
   const { currentSection, setSection, toggleIsLast } = useSectionsContext()
 
-  const fowardToNextSection = () => {
+  const forwardToNextSection = () => {
     const isLastSection = currentSection === length - 1
     const nextSection = isLastSection ? 0 : currentSection + 1
     const theNextIsLastSection = nextSection === length - 1
@@ -59,12 +59,11 @@ export const useSection = length => {
     setSection(previousSection)
   }
 
-  const [handleNextSection] = useDebouncedCallback(fowardToNextSection, 200)
-  const [handlePreviousSection] = useDebouncedCallback(backToPreviousSection, 200)
+  const [handleNextSection] = useDebouncedCallback(forwardToNextSection, 200)
+  const [handlePreviousSection] = useDebouncedCallback(
+    backToPreviousSection,
+    200
+  )
 
-  return [
-    handlePreviousSection,
-    handleNextSection,
-    currentSection
-  ]
+  return [handlePreviousSection, handleNextSection, currentSection]
 }

@@ -22,12 +22,15 @@ const createLinks = children => Children.map(children, linkFromChild)
 const Layout = ({ children }) => {
   const ref = useRef()
 
-  const [foward, previous, currentSection] = useSection(children.length)
-  const handlers = useSwipeable({ onSwipedUp: previous, onSwipedDown: foward })
+  const [previous, forward, currentSection] = useSection(children.length)
+  const handlers = useSwipeable({
+    onSwipedLeft: previous,
+    onSwipedRight: forward
+  })
 
   const handleWheel = event => {
-    if (event.deltaY) {
-      foward()
+    if (event.deltaY > 0) {
+      forward()
     } else {
       previous()
     }
@@ -38,17 +41,20 @@ const Layout = ({ children }) => {
   })
 
   useUnmount(() => {
-    ref.current.removeEvent('wheel', handleWheel)
+    ref.current.removeEventListener('wheel', handleWheel)
   })
 
   return (
-    <div {...handlers} >
-      <Styled.Container ref={ref} >
-        <Header links={createLinks(children)} />
-        {Children.map(children, renderChild(currentSection))}
-        <Footer />
-      </Styled.Container>
-    </div>
+    <Styled.Container
+      ref={divRef => {
+        handlers.ref(divRef)
+        ref.current = divRef
+      }}
+    >
+      <Header links={createLinks(children)} />
+      {Children.map(children, renderChild(currentSection))}
+      <Footer />
+    </Styled.Container>
   )
 }
 

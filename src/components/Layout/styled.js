@@ -4,12 +4,8 @@ import { md, lg, xl } from '@/css/media-query'
 import { getSecondaryColor } from '@/contexts/ThemeContext'
 
 const Container = styled.div`
-  width: 100vw;
-  min-height: 100vh;
-  min-height: -webkit-fill-avaliable;
-  overflow: hidden;
-  top: 0;
-  bottom: 0;
+  flex: 1;
+  overflow: auto;
   box-sizing: border-box;
   background: ${getSecondaryColor};
   padding: 1.5rem;
@@ -32,7 +28,7 @@ const Container = styled.div`
 
 const Content = styled.div`
   flex-grow: 2;
-  display: ${props => props.visible ? 'flex' : 'none'};
+  display: ${props => (props.visible ? 'flex' : 'none')};
   align-items: center;
 `
 

@@ -18,25 +18,25 @@ const Home = () => (
   <ThemeProvider>
     <SectionsProvider>
       <GlobalStyle />
-      <SEO title='BlumenauJS' />
+      <SEO title="BlumenauJS" />
       <Layout>
-        <Layout.Section isDark={true} label='Início'>
+        <Layout.Section isDark={true} label="Início">
           <Banner />
         </Layout.Section>
 
-        <Layout.Section label='Sobre nós'>
+        <Layout.Section label="Sobre nós">
           <About />
         </Layout.Section>
 
-        <Layout.Section isDark={true} label='Comunidade'>
+        <Layout.Section isDark={true} label="Comunidade">
           <Join />
         </Layout.Section>
 
-        <Layout.Section label='Meetup'>
+        <Layout.Section label="Meetup">
           <Meetup />
         </Layout.Section>
 
-        <Layout.Section isLast={true} isDark={true} label='Ajude'>
+        <Layout.Section isLast={true} isDark={true} label="Ajude">
           <Help />
         </Layout.Section>
       </Layout>
