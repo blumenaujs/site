@@ -14,6 +14,7 @@ const Text = styled.h1`
   ${sm(css`
     font-size: 54px;
     line-height: 73px;
+    font-weight: 600;
   `)}
 
 

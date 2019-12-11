@@ -7,7 +7,8 @@ import {
   Banner,
   About,
   Join,
-  Meetup
+  Meetup,
+  Help
 } from '@/components'
 
 import { SectionsProvider } from '@/contexts/SectionContext'
@@ -36,7 +37,7 @@ const Home = () => (
         </Layout.Section>
 
         <Layout.Section isLast={true} label='Ajude'>
-          Ajude
+          <Help />
         </Layout.Section>
       </Layout>
     </SectionsProvider>
