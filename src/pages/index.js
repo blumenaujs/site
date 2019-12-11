@@ -14,8 +14,13 @@ import {
 import { SectionsProvider } from '@/contexts/SectionContext'
 import { ThemeProvider } from '@/contexts/ThemeContext'
 
-const vh = window ? window.innerHeight * 0.01 : 0
-document.documentElement.style.setProperty('--vh', `${vh}px`)
+const windowGlobal = typeof window !== 'undefined' && window
+
+if (windowGlobal) {
+  const vh = windowGlobal.innerHeight * 0.01
+  document.documentElement.style.setProperty('--vh', `${vh}px`)
+}
+
 
 const Home = () => (
   <ThemeProvider>
