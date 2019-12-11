@@ -59,15 +59,12 @@ export const useSection = length => {
     setSection(previousSection)
   }
 
-  const handleCallback = event => {
-    if (event.deltaY > 0) {
-      fowardToNextSection()
-    } else {
-      backToPreviousSection()
-    }
-  }
+  const [handleNextSection] = useDebouncedCallback(fowardToNextSection, 200)
+  const [handlePreviousSection] = useDebouncedCallback(backToPreviousSection, 200)
 
-  const [debouncedCallback] = useDebouncedCallback(handleCallback, 100)
-
-  return [debouncedCallback, currentSection]
+  return [
+    handlePreviousSection,
+    handleNextSection,
+    currentSection
+  ]
 }

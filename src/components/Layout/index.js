@@ -1,4 +1,5 @@
 import React, { Children, useRef } from 'react'
+import { useSwipeable } from 'react-swipeable'
 import propTypes from 'prop-types'
 import { useMount, useUnmount } from 'react-use'
 
@@ -20,7 +21,17 @@ const createLinks = children => Children.map(children, linkFromChild)
 
 const Layout = ({ children }) => {
   const ref = useRef()
-  const [handleWheel, currentSection] = useSection(children.length)
+
+  const [foward, previous, currentSection] = useSection(children.length)
+  const handlers = useSwipeable({ onSwipedUp: previous, onSwipedDown: foward })
+
+  const handleWheel = event => {
+    if (event.deltaY) {
+      foward()
+    } else {
+      previous()
+    }
+  }
 
   useMount(() => {
     ref.current.addEventListener('wheel', handleWheel)
@@ -31,11 +42,13 @@ const Layout = ({ children }) => {
   })
 
   return (
-    <Styled.Container ref={ref}>
-      <Header links={createLinks(children)} />
-      {Children.map(children, renderChild(currentSection))}
-      <Footer />
-    </Styled.Container>
+    <div {...handlers} >
+      <Styled.Container ref={ref} >
+        <Header links={createLinks(children)} />
+        {Children.map(children, renderChild(currentSection))}
+        <Footer />
+      </Styled.Container>
+    </div>
   )
 }
 
