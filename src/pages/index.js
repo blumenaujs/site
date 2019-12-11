@@ -6,7 +6,8 @@ import {
   GlobalStyle,
   Banner,
   About,
-  Join
+  Join,
+  Meetup
 } from '@/components'
 
 import { SectionsProvider } from '@/contexts/SectionContext'
@@ -31,7 +32,7 @@ const Home = () => (
         </Layout.Section>
 
         <Layout.Section label='Meetup'>
-          Meetup
+          <Meetup />
         </Layout.Section>
 
         <Layout.Section isLast={true} label='Ajude'>
