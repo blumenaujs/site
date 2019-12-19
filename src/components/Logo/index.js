@@ -6,7 +6,7 @@ import MobileLogo from './MobileLogo'
 import DesktopLogo from './DesktopLogo'
 
 const Logo = () => (
-  <QueueAnim duration={800} type={['left']} delay={600}>
+  <QueueAnim duration={800} type={['left']} delay={400}>
     <Styled.MobileContainer key={1}>
       <MobileLogo />
     </Styled.MobileContainer>

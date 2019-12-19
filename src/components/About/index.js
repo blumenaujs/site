@@ -4,7 +4,7 @@ import QueueAnim from 'rc-queue-anim'
 import { Title, Text } from '@/components'
 
 const About = () => (
-  <QueueAnim type='left' delay={600} duration={800}>
+  <QueueAnim type='left' delay={400} duration={800}>
     <div key={1}>
       <Title >Sobre nós</Title>
       <Text >

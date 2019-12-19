@@ -7,7 +7,7 @@ import Styled from './styled'
 import meetupImage from './meetup.png'
 
 const Meetup = () => (
-  <QueueAnim duration={600} type='left' delay={600}>
+  <QueueAnim duration={600} type='left' delay={400}>
     <div key={1}>
       <Styled.Image src={meetupImage} alt='Foto meetup BlumenauJS' />
       <div>

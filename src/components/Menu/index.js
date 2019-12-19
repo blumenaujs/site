@@ -27,7 +27,7 @@ const Menu = ({ links }) => {
         isOpen={isOpen}
         onClick={() => toggleMenu(!isOpen)}
       />
-      <QueueAnim duration={800} type={['right']} delay={600}>
+      <QueueAnim duration={800} type={['right']} delay={400}>
 
         <Styled.Menu isOpen={isOpen} key={1}>
           <Styled.ItemsContainer>

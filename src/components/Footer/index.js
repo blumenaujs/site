@@ -1,10 +1,13 @@
 import React from 'react'
-import QueueAnim from 'rc-queue-anim'
 
 import { ScrollButton } from '@/components'
 import { useSectionsContext } from '@/contexts/SectionContext'
 
 import Styled from './styled'
+
+import { FacebookIcon } from './FacebookIcon'
+import { InstagramIcon } from './InstagramIcon'
+import { LinkedinIcon } from './LinkedinIcon'
 
 const isFirst = section => section === 0
 
@@ -15,10 +18,18 @@ const Footer = () => {
     : 'continue deslizando'
 
   return (
-    <Styled.Footer>
-      <QueueAnim duration={600} type='bottom' delay={1100}>
-        {!isLast && <ScrollButton label={label} key={1} />}
-      </QueueAnim>
+    <Styled.Footer isLast={isLast}>
+      {!isLast && <ScrollButton label={label} key={1} />}
+      {isLast &&
+        <>
+          <Styled.IconsContainer>
+            <FacebookIcon />
+            <InstagramIcon />
+            <LinkedinIcon />
+          </Styled.IconsContainer>
+          <Styled.Email>contato@blumenaujs.org</Styled.Email>
+        </>
+      }
     </Styled.Footer>
 
   )
