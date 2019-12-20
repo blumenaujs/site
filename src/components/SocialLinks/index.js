@@ -8,15 +8,15 @@ import FacebookIcon from './FacebookIcon'
 
 const SocialLinks = ({ isOpen }) => (
   <Styled.IconsContainer>
-    <Styled.SocialLink target='_blank' href='' index={1} isOpen={isOpen}>
+    <Styled.SocialLink target='_blank' rel="noopener noreferrer" href='' index={1} isOpen={isOpen}>
       <FacebookIcon />
     </Styled.SocialLink>
 
-    <Styled.SocialLink target='_blank' href='https://www.instagram.com/blumenaujs/' index={2} isOpen={isOpen}>
+    <Styled.SocialLink target='_blank' rel="noopener noreferrer" href='https://www.instagram.com/blumenaujs/' index={2} isOpen={isOpen}>
       <InstagramIcon />
     </Styled.SocialLink>
 
-    <Styled.SocialLink target='_blank' href='https://www.linkedin.com/company/blumenaujs/?viewAsMember=false' index={3} isOpen={isOpen}>
+    <Styled.SocialLink target='_blank' rel="noopener noreferrer" href='https://www.linkedin.com/company/blumenaujs/?viewAsMember=false' index={3} isOpen={isOpen}>
       <LinkedinIcon />
     </Styled.SocialLink>
   </Styled.IconsContainer>

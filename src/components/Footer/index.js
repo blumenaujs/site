@@ -23,9 +23,16 @@ const Footer = () => {
       {isLast &&
         <>
           <Styled.IconsContainer>
-            <FacebookIcon />
-            <InstagramIcon />
-            <LinkedinIcon />
+            <a target='_blank' rel="noopener noreferrer" href='' >
+              <FacebookIcon />
+            </a>
+            <a target='_blank' rel="noopener noreferrer" href='https://www.instagram.com/blumenaujs/' >
+              <InstagramIcon />
+            </a>
+            <a target='_blank' rel="noopener noreferrer" href='https://www.linkedin.com/company/blumenaujs/?viewAsMember=false' >
+              <LinkedinIcon />
+            </a>
+
           </Styled.IconsContainer>
           <Styled.Email>contato@blumenaujs.org</Styled.Email>
         </>
