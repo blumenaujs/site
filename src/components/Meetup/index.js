@@ -20,5 +20,4 @@ const Meetup = () => (
   </QueueAnim>
 )
 
-
 export { Meetup }
