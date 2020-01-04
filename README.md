@@ -9,3 +9,22 @@
 <h1 align="center">
   BlumenauJS Site
 </h1>
+
+This is the repository for [blumenaujs.org](https://blumenaujs.org)
+
+## Setup
+```sh
+yarn
+
+yarn develop
+
+## Open localhost:8000
+```
+
+## Design / UI
+
+Design can be found [here](https://github.com/blumenaujs/site/blob/master/assets/logo.png)
+
+## LICENSE
+
+MIT
