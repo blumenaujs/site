@@ -23,7 +23,7 @@ const Footer = () => {
       {isLast &&
         <>
           <Styled.IconsContainer>
-            <a target='_blank' rel="noopener noreferrer" href='' >
+            <a target='_blank' rel="noopener noreferrer" href='https://www.facebook.com/blumenaujs/' >
               <FacebookIcon />
             </a>
             <a target='_blank' rel="noopener noreferrer" href='https://www.instagram.com/blumenaujs/' >
