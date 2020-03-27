@@ -22,7 +22,7 @@ const Join = () => (
         <SlackIcon />
       </Styled.Link>
 
-      <Styled.Link href='https://discord.gg/JU9ywc' target='_blank'>
+      <Styled.Link href='https://discord.gg/qccyVyK' target='_blank'>
         <DiscordIcon />
       </Styled.Link>
     </div>
